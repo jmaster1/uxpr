@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Xpr.xpr.Unity
+namespace xpr.Unity
 {
 
-    public enum GOProperty
+    public enum UnityProperty
     {
         x,
         y,
@@ -14,39 +14,39 @@ namespace Xpr.xpr.Unity
         sz
     }
     
-    public static class GOPropertyEx
+    public static class UnityPropertyEx
     {
 
-        public static Action<GameObject, float> GetSetter(this GOProperty val)
+        public static Action<GameObject, float> GetSetter(this UnityProperty val)
         {
             return val switch
             {
-                GOProperty.x => (go, val) =>
+                UnityProperty.x => (go, val) =>
                 {
                     var pos = go.transform.position;
                     go.transform.position = new Vector3(val, pos.y, pos.z);
                 },
-                GOProperty.y => (go, val) =>
+                UnityProperty.y => (go, val) =>
                 {
                     var pos = go.transform.position;
                     go.transform.position = new Vector3(pos.x, val, pos.z);
                 },
-                GOProperty.z => (go, val) =>
+                UnityProperty.z => (go, val) =>
                 {
                     var pos = go.transform.position;
                     go.transform.position = new Vector3(pos.x, pos.y, val);
                 },
-                GOProperty.sx => (go, val) =>
+                UnityProperty.sx => (go, val) =>
                 {
                     var pos = go.transform.localScale;
                     go.transform.localScale = new Vector3(val, pos.y, pos.z);
                 },
-                GOProperty.sy => (go, val) =>
+                UnityProperty.sy => (go, val) =>
                 {
                     var pos = go.transform.localScale;
                     go.transform.localScale = new Vector3(pos.x, val, pos.z);
                 },
-                GOProperty.sz => (go, val) =>
+                UnityProperty.sz => (go, val) =>
                 {
                     var pos = go.transform.localScale;
                     go.transform.localScale = new Vector3(pos.x, pos.y, val);
