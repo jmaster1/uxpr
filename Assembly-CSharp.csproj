@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\xpr\Unity\UnityXprContext.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\UnityFunc0.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\SpriteProperty.cs" />
+     <Compile Include="Assets\Scripts\emit\Unity\UnityEmitter.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
