@@ -16,7 +16,7 @@ namespace Xpr.xpr
 
         public Xpr Parse()
         {
-            Val = XprParser.createVal(Src);
+            Val = XprParser.CreateVal(Src);
             return this;
         }
 

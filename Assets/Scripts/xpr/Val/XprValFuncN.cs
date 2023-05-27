@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +7,7 @@ namespace Xpr.xpr.Val
 
     internal class XprValFuncN : XprValFunc
     {
-        private readonly List<XprVal> _args = new List<XprVal?>();
+        private readonly List<XprVal> _args = new();
 
         private float[]? _values;
 
@@ -36,7 +37,7 @@ namespace Xpr.xpr.Val
         public void AddArg(XprVal? arg)
         {
             Assert(arg != null);
-            _args.Add(arg);
+            if (arg != null) _args.Add(arg);
         }
 
         public XprVal Reduce()

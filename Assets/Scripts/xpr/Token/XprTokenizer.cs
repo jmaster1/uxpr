@@ -1,5 +1,7 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using Xpr.xpr.Math;
 using Xpr.xpr.Util;
@@ -9,8 +11,8 @@ namespace Xpr.xpr.Token
 {
 
     /**
- * converts character stream of expression into xpr tokens
- */
+     * converts character stream of expression into xpr tokens
+     */
     public class XprTokenizer : GenericEntity
     {
         private const char DecimalSeparator = '.';
@@ -21,15 +23,15 @@ namespace Xpr.xpr.Token
         private const int Eof = -1;
 
         /**
-     * source string
-     */
+         * source string
+         */
         private readonly string _src;
 
         private readonly int _len;
 
         /**
-     * cursor on the string
-     */
+         * cursor on the string
+         */
         private int _cur;
 
         private readonly StringBuilder _sb = new StringBuilder();
@@ -52,8 +54,8 @@ namespace Xpr.xpr.Token
         }
 
         /**
-     * bracket counter, increment on open, decrement on close
-     */
+         * bracket counter, increment on open, decrement on close
+         */
         private int _bracketStack;
 
         private XprToken? _peekedToken;
@@ -66,9 +68,9 @@ namespace Xpr.xpr.Token
         }
 
         /**
-     * skip all the whitespaces starting from current position
-     * @return true if eof
-     */
+         * skip all the whitespaces starting from current position
+         * @return true if eof
+         */
         private bool SkipWhitespaces()
         {
             for (var c = Peek(); c != Eof && char.IsWhiteSpace((char) c); c = Peek())
@@ -114,7 +116,7 @@ namespace Xpr.xpr.Token
             {
                 tokenType = Number;
                 var str = Read(c, IsNumeric);
-                tokenValue = float.Parse(str);
+                tokenValue = float.Parse(str, CultureInfo.InvariantCulture);
             }
             else if (MathOperatorEx.resolve(c, out var op))
             {
@@ -202,5 +204,4 @@ namespace Xpr.xpr.Token
             _peekedToken = null;
         }
     }
-
 }

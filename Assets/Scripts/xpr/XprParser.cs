@@ -1,4 +1,6 @@
+#nullable enable
 using System;
+using System.Diagnostics;
 using Xpr.xpr.Math;
 using Xpr.xpr.Token;
 using Xpr.xpr.Util;
@@ -11,12 +13,12 @@ namespace Xpr.xpr
     {
         public static readonly XprParser Instance = new XprParser();
 
-        public static XprVal? createVal(string src)
+        public static XprVal? CreateVal(string src)
         {
-            return Instance.parseVal(src);
+            return Instance.ParseVal(src);
         }
 
-        private XprVal? parseVal(string source)
+        private XprVal? ParseVal(string source)
         {
             var xt = new XprTokenizer(source);
             XprVal? val = null;
@@ -28,7 +30,7 @@ namespace Xpr.xpr
             return val;
         }
 
-        XprVal? ParseNext(XprTokenizer xt, XprVal? prevVal, out XprToken? unconsumedToken)
+        private XprVal? ParseNext(XprTokenizer xt, XprVal? prevVal, out XprToken? unconsumedToken)
         {
             unconsumedToken = null;
             var token = xt.NextToken();
@@ -46,11 +48,13 @@ namespace Xpr.xpr
                     break;
                 case XprTokenType.Variable:
                     var name = token.StringValue;
+                    Debug.Assert(name != null, nameof(name) + " != null");
                     var func = new XprValFuncN(name);
                     var nextToken = xt.PeekToken();
                     var opened = XprTokenType.BracketOpen.Is(nextToken);
                     if (opened)
                     {
+                        Debug.Assert(nextToken != null, nameof(nextToken) + " != null");
                         xt.ConsumePeekToken(nextToken);
                         XprVal? arg = null;
                         while (opened && xt.GetHasMoreTokens())

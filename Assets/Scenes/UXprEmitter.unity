@@ -245,16 +245,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608363745}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebf91bcaafbd4f0aaaa512393297b8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   properties:
-  - property: 0
-    src: sin(t)
-  - property: 1
-    src: cos(t)
+  - property: 3
+    src: 1.2 + sin(t * 2)
+  - property: 4
+    src: 1.2 + cos(t * 3)
 --- !u!212 &608363748
 SpriteRenderer:
   m_ObjectHideFlags: 0

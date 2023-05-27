@@ -152,14 +152,9 @@ namespace Xpr.xpr.Util
         /// <summary>
         /// transform source list elements into target list elements
         /// </summary>
-        public static void BuildList<T, S>(List<T> target, List<S> source, Func<S, T> transformer)
+        public static void BuildList<T, TS>(List<T> target, List<TS> source, Func<TS, T> transformer)
         {
-            for (var i = 0; i < source.Count; i++)
-            {
-                var s = source[i];
-                var t = transformer(s);
-                target.Add(t);
-            }
+            target.AddRange(source.Select(s => transformer(s)));
         }
 
         /// <summary>
