@@ -6,15 +6,18 @@ namespace xpr.Unity
 
     public class UXprContext : MonoBehaviour
     {
-        public static readonly XprContext Context = XprContext.CreateDefault();
+        public static readonly XprContext Context = Create();
 
         private void Awake()
         {
             Context.Funcs0[UnityFunc0.T.ToString().ToLower()] = UnityFunc0.T.GetFunc();
         }
 
-        private void Update()
+        public static XprContext Create()
         {
+            var ctx = XprContext.CreateDefault();
+            ctx.Funcs0[UnityFunc0.T.ToString().ToLower()] = UnityFunc0.T.GetFunc();
+            return ctx;
         }
     }
 
