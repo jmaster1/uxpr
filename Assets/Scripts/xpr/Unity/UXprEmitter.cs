@@ -38,6 +38,7 @@ namespace xpr.Unity
         {
             var e = Instantiate(particle);
             particleProperties.Apply(ctx, e);
+            e.SetActive(true);
         }
     }
 

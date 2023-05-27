@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 13.29
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -237,7 +237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &608363747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,11 +252,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   properties:
   - property: 3
-    src: 0.5 + sin(t * 0.2) * 0.3
+    src: ' sin(t * 0.2) * 2.3 + y'
+    disabled: 0
   - property: 4
-    src: 0.5 + cos(t * 0.3) * 0.4
+    src: cos(t * 0.3) * 1.4 + x
+    disabled: 0
   - property: 8
-    src: cos(t) * 180
+    src: rz0 + cos(t) * 180
+    disabled: 0
+  - property: 0
+    src: x0 + sin(t * x0 + z0)
+    disabled: 0
 --- !u!212 &608363748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -317,7 +323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608363745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.87939703, y: -0.9486225, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -355,12 +361,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 608363745}
   particleCount:
-    source: 12
+    source: 2
   particleProperties:
   - property: 0
-    src: cos(generatedCount / particleCount * 2 * pi)
+    src: cos(generatedCount / particleCount * 2 * pi) * 5
+    disabled: 0
   - property: 1
-    src: sin(generatedCount / particleCount * 2 * pi)
+    src: sin(generatedCount / particleCount * 2 * pi) * 5
+    disabled: 0
+  - property: 2
+    src: generatedCount
+    disabled: 0
+  - property: 9
+    src: 1
+    disabled: 0
+  - property: 10
+    src: 1
+    disabled: 0
+  - property: 11
+    src: 0.5 + generatedCount / particleCount / 2
+    disabled: 0
+  - property: 8
+    src: generatedCount / particleCount * 360
+    disabled: 0
 --- !u!4 &683914130
 Transform:
   m_ObjectHideFlags: 0
@@ -369,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683914126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.87939703, y: -0.9486225, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

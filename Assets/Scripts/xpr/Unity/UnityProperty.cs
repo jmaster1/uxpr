@@ -14,7 +14,11 @@ namespace xpr.Unity
         sz,
         rx,
         ry,
-        rz
+        rz,
+        cr,
+        cg,
+        cb,
+        ca
     }
     
     public static class UnityPropertyEx
@@ -68,6 +72,34 @@ namespace xpr.Unity
                 {
                     var pos = go.transform.rotation;
                     go.transform.rotation = Quaternion.Euler(pos.x, pos.y, val);
+                },
+                UnityProperty.cr => (go, val) =>
+                {
+                    var sprite = go.GetComponent<SpriteRenderer>();
+                    var color = sprite.color;
+                    color.r = val;
+                    sprite.color = color;
+                },
+                UnityProperty.cg => (go, val) =>
+                {
+                    var sprite = go.GetComponent<SpriteRenderer>();
+                    var color = sprite.color;
+                    color.g = val;
+                    sprite.color = color;
+                },
+                UnityProperty.cb => (go, val) =>
+                {
+                    var sprite = go.GetComponent<SpriteRenderer>();
+                    var color = sprite.color;
+                    color.b = val;
+                    sprite.color = color;
+                },
+                UnityProperty.ca => (go, val) =>
+                {
+                    var sprite = go.GetComponent<SpriteRenderer>();
+                    var color = sprite.color;
+                    color.a = val;
+                    sprite.color = color;
                 },
                 _ => throw new ArgumentOutOfRangeException(nameof(p), p, null)
             };
