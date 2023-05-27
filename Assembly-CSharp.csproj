@@ -48,7 +48,6 @@
      <Compile Include="Assets\Scripts\xpr\Math\MathFunc1.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\UXprContext.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\UXprProperties.cs" />
-     <Compile Include="Assets\Scripts\emit\Unity\UnityEmitter.cs" />
      <Compile Include="Assets\Scripts\xpr\Math\MathFunc2.cs" />
      <Compile Include="Assets\Scripts\xpr\Val\XprValFunc0.cs" />
      <Compile Include="Assets\Scripts\xpr\Util\LangHelper.cs" />
