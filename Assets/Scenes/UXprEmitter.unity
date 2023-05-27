@@ -252,9 +252,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   properties:
   - property: 3
-    src: 1.2 + sin(t * 2)
+    src: 0.5 + sin(t * 0.2) * 0.3
   - property: 4
-    src: 1.2 + cos(t * 3)
+    src: 0.5 + cos(t * 0.3) * 0.4
+  - property: 8
+    src: cos(t) * 180
 --- !u!212 &608363748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -296,12 +298,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e3ab41d54c66ae6479b5405aec523886, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c09bc7dc871acc49be51b4a20f4aef1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.08, y: 1.19}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

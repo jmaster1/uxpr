@@ -11,15 +11,18 @@ namespace xpr.Unity
         z,
         sx,
         sy,
-        sz
+        sz,
+        rx,
+        ry,
+        rz
     }
     
     public static class UnityPropertyEx
     {
 
-        public static Action<GameObject, float> GetSetter(this UnityProperty val)
+        public static Action<GameObject, float> GetSetter(this UnityProperty p)
         {
-            return val switch
+            return p switch
             {
                 UnityProperty.x => (go, val) =>
                 {
@@ -51,7 +54,22 @@ namespace xpr.Unity
                     var pos = go.transform.localScale;
                     go.transform.localScale = new Vector3(pos.x, pos.y, val);
                 },
-                _ => throw new ArgumentOutOfRangeException(nameof(val), val, null)
+                UnityProperty.rx => (go, val) =>
+                {
+                    var pos = go.transform.rotation;
+                    go.transform.rotation =  Quaternion.Euler(val, pos.y, pos.z);
+                },
+                UnityProperty.ry => (go, val) =>
+                {
+                    var pos = go.transform.rotation;
+                    go.transform.rotation = Quaternion.Euler(pos.x, val, pos.z);
+                },
+                UnityProperty.rz => (go, val) =>
+                {
+                    var pos = go.transform.rotation;
+                    go.transform.rotation = Quaternion.Euler(pos.x, pos.y, val);
+                },
+                _ => throw new ArgumentOutOfRangeException(nameof(p), p, null)
             };
         }
     }
