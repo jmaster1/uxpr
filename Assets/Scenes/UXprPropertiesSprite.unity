@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 608363748}
   - component: {fileID: 608363747}
   m_Layer: 0
-  m_Name: smallYellowButton
+  m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
