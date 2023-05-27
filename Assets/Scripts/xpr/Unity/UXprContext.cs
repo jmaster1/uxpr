@@ -1,12 +1,10 @@
-﻿using System;
-using UnityEngine;
-using xpr.Unity;
-using Xpr.xpr.Math;
+﻿using UnityEngine;
+using Xpr.xpr;
 
-namespace Xpr.xpr.Unity
+namespace xpr.Unity
 {
 
-    public class UnityXprContext : MonoBehaviour
+    public class UXprContext : MonoBehaviour
     {
         public static readonly XprContext Context = XprContext.CreateDefault();
 
