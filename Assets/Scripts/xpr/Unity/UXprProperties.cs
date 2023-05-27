@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using Xpr.xpr;
-using Xpr.xpr.Unity;
 
 namespace xpr.Unity
 {
 
-    public partial class UXprProperties : MonoBehaviour
+    public class UXprProperties : MonoBehaviour
     {
-        public static XprContext ctx => UXprContext.Context;
+        private static XprContext Ctx => UXprContext.Context;
 
         public UXprProperty[] properties;
 
@@ -23,7 +22,7 @@ namespace xpr.Unity
         {
             foreach (var property in properties)
             {
-                property.Apply(ctx, gameObject);
+                property.Apply(Ctx, gameObject);
             }
         }
     }
