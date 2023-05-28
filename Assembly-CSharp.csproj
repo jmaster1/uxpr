@@ -48,6 +48,8 @@
      <Compile Include="Assets\Scripts\xpr\Math\MathFunc1.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\UXprContext.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\UXprProperties.cs" />
+     <Compile Include="Assets\Scripts\xpr\Unity\UXprEmitter.cs" />
+     <Compile Include="Assets\Scripts\xpr\Unity\UXprProperty.cs" />
      <Compile Include="Assets\Scripts\xpr\Math\MathFunc2.cs" />
      <Compile Include="Assets\Scripts\xpr\Val\XprValFunc0.cs" />
      <Compile Include="Assets\Scripts\xpr\Util\LangHelper.cs" />
@@ -70,14 +72,12 @@
      <Compile Include="Assets\Scripts\xpr\Util\Map.cs" />
      <Compile Include="Assets\Scripts\xpr\Token\SrcRange.cs" />
      <Compile Include="Assets\Scripts\xpr\Val\XprValNumber.cs" />
+     <Compile Include="Assets\Scripts\xpr\Unity\UXpr.cs" />
      <Compile Include="Assets\Scripts\xpr\Val\XprValFuncN.cs" />
      <Compile Include="Assets\Scripts\xpr\Val\XprValFunc2.cs" />
      <Compile Include="Assets\Scripts\xpr\XprParser.cs" />
      <Compile Include="Assets\Scripts\xpr\Val\XprValType.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\SpriteProperty.cs" />
-     <Compile Include="Assets\Scripts\xpr\Unity\UXprProperty.cs" />
-     <Compile Include="Assets\Scripts\xpr\Unity\UXprEmitter.cs" />
-     <Compile Include="Assets\Scripts\xpr\Unity\UXpr.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
