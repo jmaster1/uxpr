@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 13.29
+  orthographic size: 30
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -325,11 +325,17 @@ MonoBehaviour:
     src: cos(t * 0.3) * 1.4 + x
     disabled: 0
   - property: 8
-    src: rz0 + cos(t) * 180
+    src: rz0 + t * 120 + cos(t) * 180
     disabled: 0
   - property: 0
     src: x0 + sin(t * x0 + z0)
     disabled: 1
+  - property: 9
+    src: abs(sin(t + x0))
+    disabled: 0
+  - property: 10
+    src: abs(cos(t + x0))
+    disabled: 0
 --- !u!1 &683914126
 GameObject:
   m_ObjectHideFlags: 0

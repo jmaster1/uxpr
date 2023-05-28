@@ -29,7 +29,7 @@ namespace xpr.Unity
             Ctx.Funcs0["rx0"] = () => rot.x;
             Ctx.Funcs0["ry0"] = () => rot.y;
             Ctx.Funcs0["rz0"] = () => rot.z;
-            properties.Prepare(Ctx, gameObject);
+            properties.Apply(Ctx, gameObject);
         }
 
         private void Update()
