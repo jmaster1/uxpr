@@ -13,6 +13,9 @@ namespace xpr.Unity
 
         private void Awake()
         {
+            var t0 = Time.time;
+            Ctx.Funcs0["t0"] = () => t0;
+            
             Ctx.Funcs0["x"] = () => transform.position.x;
             Ctx.Funcs0["y"] = () => transform.position.y;
             Ctx.Funcs0["z"] = () => transform.position.z;

@@ -31,6 +31,7 @@ namespace xpr.Unity
         {
             ctx.Funcs0["generatedcount"] = ctx.Funcs0["i"] = () => _generatedCount;
             ctx.Funcs0["particlecount"] = ctx.Funcs0["n"] = () => particleCount.Eval(ctx);
+            ctx.Funcs0["generatednormal"] = () => _generatedCount / particleCount.Eval(ctx);
         }
 
         private void Update()
@@ -60,12 +61,10 @@ namespace xpr.Unity
             go.SetActive(true);
             _lastCreateTime = Time.time;
             Particles.Add(e);
-            
         }
 
         protected abstract GameObject GetGameObject(T e);
 
         protected abstract T Clone();
     }
-
 }

@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   samples: 64
-  avgHistory: 3
+  avgHistory: 64
   freqHistorySamples: 256
   freqHistoryIndex: 32
   spectrumPlotter: {fileID: 361457629}
