@@ -27,7 +27,7 @@ namespace Xpr.xpr.Token
 
         [JsonIgnore] public string? StringValue => (string) (Value ?? null)!;
 
-        [JsonIgnore] public MathOperator MathOperator => (MathOperator) (Value ?? MathOperator.Undefined);
+        [JsonIgnore] public MathOperator MathOperator => (MathOperator) (Value);
 
         public bool Is(XprTokenType type)
         {
