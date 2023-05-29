@@ -118,7 +118,7 @@ namespace Xpr.xpr.Token
                 var str = Read(c, IsNumeric);
                 tokenValue = float.Parse(str, CultureInfo.InvariantCulture);
             }
-            else if (MathOperatorEx.Resolve(c, out var op))
+            else if (MathOperatorEx.resolve(c, out var op))
             {
                 tokenType = Operator;
                 tokenValue = op;
