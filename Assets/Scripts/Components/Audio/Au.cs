@@ -11,7 +11,7 @@ public class Au : MonoBehaviour
     
     public int freqHistoryIndex = 32;
 
-    private FloatArrayHistory _history = new();
+    public readonly FloatArrayHistory History = new();
 
     public Plotter spectrumPlotter;
     
@@ -20,14 +20,14 @@ public class Au : MonoBehaviour
     
     void Start()
     {
-        spectrumPlotter.Provider = _history.CreateAverageProvider(avgHistory);
-        freqHistoryPlotter.Provider = _history.CreateHistoryProvider(freqHistoryIndex, freqHistorySamples);
+        spectrumPlotter.Provider = History.CreateAverageProvider(avgHistory);
+        freqHistoryPlotter.Provider = History.CreateHistoryProvider(freqHistoryIndex, freqHistorySamples);
     }
 
     private void FixedUpdate()
     {
         var spectrum = new float[samples];
         AudioListener.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
-        _history.Add(spectrum);
+        History.Add(spectrum);
     }
 }

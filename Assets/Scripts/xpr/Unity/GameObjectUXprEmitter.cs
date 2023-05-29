@@ -3,7 +3,7 @@
 namespace xpr.Unity
 {
 
-    public class UXprEmitter : AbstractUXprEmitter<GameObject>
+    public class GameObjectUXprEmitter : AbstractUXprEmitter<GameObject>
     {
         protected override GameObject GetGameObject(GameObject e)
         {

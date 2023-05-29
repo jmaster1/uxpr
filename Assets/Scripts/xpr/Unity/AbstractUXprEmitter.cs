@@ -25,7 +25,7 @@ namespace xpr.Unity
         private readonly XprContext ctx = UXprContext.Create();
         private float _lastCreateTime;
 
-        public readonly List<T> Particles = new List<T>();
+        public readonly List<T> Particles = new();
 
         private void Awake()
         {
