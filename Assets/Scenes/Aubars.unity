@@ -439,7 +439,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6965e430b2d78df4e98742af5b703774, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1926ec842a3199a48802438a4a1f7473, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -553,9 +553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   samples: 64
-  avgHistory: 64
+  avgHistory: 8
   freqHistorySamples: 256
-  freqHistoryIndex: 32
+  freqHistoryIndex: 0
   spectrumPlotter: {fileID: 361457629}
   freqHistoryPlotter: {fileID: 1096614867}
 --- !u!1 &1983672323
