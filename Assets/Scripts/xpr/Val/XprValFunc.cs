@@ -4,9 +4,9 @@ namespace Xpr.xpr.Val
     internal abstract class XprValFunc : XprVal
     {
         /**
-     * function name retrieval
-     */
-        public readonly string Name;
+         * function name retrieval
+         */
+        protected readonly string Name;
 
         protected XprValFunc(string name)
         {

@@ -1,3 +1,4 @@
+#nullable enable
 using Xpr.xpr.Val;
 
 namespace Xpr.xpr

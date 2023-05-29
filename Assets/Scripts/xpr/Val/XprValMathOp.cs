@@ -1,3 +1,4 @@
+#nullable enable
 using Xpr.xpr.Math;
 
 namespace Xpr.xpr.Val
@@ -5,14 +6,14 @@ namespace Xpr.xpr.Val
 
     internal class XprValMathOp : XprVal
     {
-        public XprVal? _left, _right;
+        public XprVal? Left, Right;
 
         public readonly MathOperator MathOperator;
 
         public XprValMathOp(MathOperator op, XprVal left)
         {
             MathOperator = op;
-            _left = left;
+            Left = left;
         }
 
         public override XprValType GetValType()
@@ -22,14 +23,14 @@ namespace Xpr.xpr.Val
 
         public override float Eval(XprContext ctx)
         {
-            var l = _left.Eval(ctx);
-            var r = _right.Eval(ctx);
+            var l = Left!.Eval(ctx);
+            var r = Right!.Eval(ctx);
             return MathOperator.Apply(l, r);
         }
 
         public override string ToString()
         {
-            return $"{_left} {MathOperator.GetChar()} {_right}";
+            return $"{Left} {MathOperator.GetChar()} {Right}";
         }
     }
 
