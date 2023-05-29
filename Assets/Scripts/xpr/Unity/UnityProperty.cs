@@ -30,18 +30,18 @@ namespace xpr.Unity
             {
                 UnityProperty.x => (go, val) =>
                 {
-                    var pos = go.transform.position;
-                    go.transform.position = new Vector3(val, pos.y, pos.z);
+                    var pos = go.transform.localPosition;
+                    go.transform.localPosition = new Vector3(val, pos.y, pos.z);
                 },
                 UnityProperty.y => (go, val) =>
                 {
-                    var pos = go.transform.position;
-                    go.transform.position = new Vector3(pos.x, val, pos.z);
+                    var pos = go.transform.localPosition;
+                    go.transform.localPosition = new Vector3(pos.x, val, pos.z);
                 },
                 UnityProperty.z => (go, val) =>
                 {
-                    var pos = go.transform.position;
-                    go.transform.position = new Vector3(pos.x, pos.y, val);
+                    var pos = go.transform.localPosition;
+                    go.transform.localPosition = new Vector3(pos.x, pos.y, val);
                 },
                 UnityProperty.sx => (go, val) =>
                 {
