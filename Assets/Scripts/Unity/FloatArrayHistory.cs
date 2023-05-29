@@ -26,6 +26,14 @@ public class FloatArrayHistory : GenericEntity
             i => new Vector2(i, Avg(i, size))
         );
     }
+    
+    public IData2DProvider CreateHistoryProvider(int index, int size)
+    {
+        return new DefaultData2DProvider(
+            () => history.Count,
+            i => new Vector2(i, history[i][index])
+        );
+    }
 
     private float Avg(int index, int size)
     {
