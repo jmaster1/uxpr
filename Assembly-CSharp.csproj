@@ -81,6 +81,8 @@
      <Compile Include="Assets\Scripts\xpr\XprParser.cs" />
      <Compile Include="Assets\Scripts\xpr\Val\XprValType.cs" />
      <Compile Include="Assets\Scripts\xpr\Unity\SpriteProperty.cs" />
+     <Compile Include="Assets\Scripts\Unity\Plotter.cs" />
+     <Compile Include="Assets\Scripts\Unity\FloatArrayHistory.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

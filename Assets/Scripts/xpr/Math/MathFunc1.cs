@@ -1,18 +1,20 @@
 using System;
+using UnityEngine;
 
 namespace Xpr.xpr.Math
 {
 
     /**
- * math functions with single argument
- */
+     * math functions with single argument
+     */
     public enum MathFunc1
     {
         Negate,
         Sign,
         Abs,
         Sin,
-        Cos
+        Cos,
+        Log
     }
 
     public static class MathFunc1Ex
@@ -26,6 +28,7 @@ namespace Xpr.xpr.Math
                 MathFunc1.Abs => Abs,
                 MathFunc1.Sin => Sin,
                 MathFunc1.Cos => Cos,
+                MathFunc1.Log => Log,
                 _ => throw new ArgumentOutOfRangeException(nameof(val), val, null)
             };
         }
@@ -53,6 +56,11 @@ namespace Xpr.xpr.Math
         private static float Negate(float arg)
         {
             return -arg;
+        }
+        
+        private static float Log(float arg)
+        {
+            return Mathf.Log(arg);
         }
     }
 
