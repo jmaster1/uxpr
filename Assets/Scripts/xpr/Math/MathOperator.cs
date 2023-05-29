@@ -5,7 +5,6 @@ namespace Xpr.xpr.Math
 
     public enum MathOperator
     {
-        Undefined,
         Plus,
         Minus,
         Multiply,
@@ -20,17 +19,6 @@ namespace Xpr.xpr.Math
 
         public static readonly int[] Priorities = {0, 0, 1, 1, 1, 2};
 
-        public static readonly MathFunc[] MathFuncs =
-        {
-            MathFunc.Undefined,
-            MathFunc.Add,
-            MathFunc.Sub,
-            MathFunc.Mul,
-            MathFunc.Div,
-            MathFunc.Mod,
-            MathFunc.Pow
-        };
-
         public static char GetChar(this MathOperator val)
         {
             return Chars[(int) val];
@@ -41,44 +29,28 @@ namespace Xpr.xpr.Math
             return Priorities[(int) val];
         }
 
-        public static MathFunc GetMathFunc(this MathOperator val)
-        {
-            return MathFuncs[(int) val];
-        }
-
         public static float Apply(this MathOperator val, float l, float r)
         {
-            switch (val)
+            return val switch
             {
-                case MathOperator.Plus:
-                    return l + r;
-                case MathOperator.Minus:
-                    return l - r;
-                case MathOperator.Multiply:
-                    return l * r;
-                case MathOperator.Divide:
-                    return l / r;
-                case MathOperator.Modulus:
-                    return l % r;
-                case MathOperator.Power:
-                    return (float) System.Math.Pow(l, r);
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(val), val, null);
-            }
+                MathOperator.Plus => l + r,
+                MathOperator.Minus => l - r,
+                MathOperator.Multiply => l * r,
+                MathOperator.Divide => l / r,
+                MathOperator.Modulus => l % r,
+                MathOperator.Power => (float)System.Math.Pow(l, r),
+                _ => throw new ArgumentOutOfRangeException(nameof(val), val, null)
+            };
         }
 
-        public static bool resolve(char next, out MathOperator op)
+        public static bool Resolve(char next, out MathOperator op)
         {
             var index = Array.IndexOf(Chars, next);
+            op = default;
             if (index != -1)
             {
                 op = (MathOperator) index;
             }
-            else
-            {
-                op = MathOperator.Undefined;
-            }
-
             return index != -1;
         }
     }
