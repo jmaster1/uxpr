@@ -74,7 +74,7 @@
      <Compile Include="Assets/Scripts/xpr/Util/GenericEntity.cs" />
      <Compile Include="Assets/Scripts/xpr/Unity/UnityProperty.cs" />
      <Compile Include="Assets/Scripts/xpr/Util/Map.cs" />
-     <Compile Include="Assets/Scripts/xpr/Token/SrcRange.cs" />
+     <Compile Include="Assets/Scripts/xpr/Util/StringRange.cs" />
      <Compile Include="Assets/Scripts/xpr/Val/XprValNumber.cs" />
      <Compile Include="Assets/Scripts/xpr/Unity/UXpr.cs" />
      <Compile Include="Assets/Scripts/xpr/Val/XprValFuncN.cs" />
@@ -84,6 +84,7 @@
      <Compile Include="Assets/Scripts/xpr/Val/XprValType.cs" />
      <Compile Include="Assets/Scripts/xpr/Unity/SpriteProperty.cs" />
      <Compile Include="Assets/Scripts/xpr/Val/XprValDelegate.cs" />
+     <Compile Include="Assets/Scripts/xpr/Util/GenericRange.cs" />
      <None Include="Assets/Scripts/Scripts.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

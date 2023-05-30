@@ -1,9 +1,8 @@
 #nullable enable
 using xpr.Math;
-using xpr.Token;
 using xpr.Util;
 
-namespace Xpr.xpr.Token
+namespace xpr.Token
 {
 
     /**
@@ -15,9 +14,9 @@ namespace Xpr.xpr.Token
 
         public readonly object? Value;
 
-        public readonly SrcRange Range;
+        public readonly StringRange Range;
 
-        public XprToken(XprTokenType type, object? value, SrcRange range)
+        public XprToken(XprTokenType type, object? value, StringRange range)
         {
             Type = type;
             Value = value;

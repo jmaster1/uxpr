@@ -5,7 +5,6 @@ using xpr.Math;
 using xpr.Token;
 using xpr.Util;
 using xpr.Val;
-using Xpr.xpr.Token;
 
 namespace xpr
 {

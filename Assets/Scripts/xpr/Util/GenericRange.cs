@@ -1,13 +1,12 @@
-namespace xpr.Token
+namespace xpr.Util
 {
-
-    public struct SrcRange
+    public class GenericRange<T>
     {
-        public readonly string Src;
+        public readonly T Src;
 
         public int From, Length;
 
-        public SrcRange(string src, int cur)
+        public GenericRange(T src, int cur)
         {
             Src = src;
             From = cur;
@@ -19,7 +18,7 @@ namespace xpr.Token
             return "" + From + ":" + Length;
         }
 
-        public SrcRange SetTo(int cur)
+        public GenericRange<T> SetTo(int cur)
         {
             Length = cur - From;
             return this;

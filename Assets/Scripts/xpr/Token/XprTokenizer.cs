@@ -5,8 +5,6 @@ using System.Globalization;
 using System.Text;
 using xpr.Math;
 using xpr.Util;
-using Xpr.xpr;
-using Xpr.xpr.Token;
 using static xpr.Token.XprTokenType;
 
 namespace xpr.Token
@@ -113,7 +111,7 @@ namespace xpr.Token
             var c = (char) n;
             XprTokenType tokenType;
             object? tokenValue = null;
-            var range = new SrcRange(_src, _cur);
+            var range = new StringRange(_src, _cur);
             if (IsNumeric(c))
             {
                 tokenType = Number;
@@ -152,7 +150,8 @@ namespace xpr.Token
                         throw new Exception("Unexpected char: " + c);
                 }
 
-            return new XprToken(tokenType, tokenValue, range.SetTo(_cur));
+            range.SetTo(_cur);
+            return new XprToken(tokenType, tokenValue, range);
         }
 
         private static bool IsVariableOrNumber(char c)
