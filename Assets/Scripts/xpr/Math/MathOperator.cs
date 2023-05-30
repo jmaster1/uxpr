@@ -20,17 +20,6 @@ namespace Xpr.xpr.Math
 
         public static readonly int[] Priorities = {0, 0, 1, 1, 1, 2};
 
-        public static readonly MathFunc[] MathFuncs =
-        {
-            MathFunc.Undefined,
-            MathFunc.Add,
-            MathFunc.Sub,
-            MathFunc.Mul,
-            MathFunc.Div,
-            MathFunc.Mod,
-            MathFunc.Pow
-        };
-
         public static char GetChar(this MathOperator val)
         {
             return Chars[(int) val];
@@ -40,11 +29,7 @@ namespace Xpr.xpr.Math
         {
             return Priorities[(int) val];
         }
-
-        public static MathFunc GetMathFunc(this MathOperator val)
-        {
-            return MathFuncs[(int) val];
-        }
+        
 
         public static float Apply(this MathOperator val, float l, float r)
         {

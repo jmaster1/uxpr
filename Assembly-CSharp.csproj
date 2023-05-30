@@ -58,7 +58,6 @@
      <Compile Include="Assets/Scripts/Unity/FloatArrayHistory.cs" />
      <Compile Include="Assets/Scripts/xpr/Unity/AbstractUXprEmitter.cs" />
      <Compile Include="Assets/Scripts/xpr/Util/StringHelper.cs" />
-     <Compile Include="Assets/Scripts/xpr/Math/MathFunc.cs" />
      <Compile Include="Assets/Scripts/xpr/Unity/MonobehUXprEmitter.cs" />
      <Compile Include="Assets/Scripts/xpr/Token/XprTokenType.cs" />
      <Compile Include="Assets/Scripts/xpr/Token/XprToken.cs" />
