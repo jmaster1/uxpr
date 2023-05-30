@@ -111,10 +111,10 @@ namespace Xpr.xpr
                     }
                     else
                     {
-                        var mathOp = new XprValMathOp(token.MathOperator, prevVal);
+                        var mathOp = new XprValMathOp(token.MathOperator, prevVal!);
                         //
                         // check if prev is math op with lower priority
-                        var prevMathOp = prevVal != null && prevVal.Is(XprValType.MathOp) ? (XprValMathOp) prevVal : null;
+                        var prevMathOp = prevVal!.Is(XprValType.MathOp) ? (XprValMathOp) prevVal : null;
                         if (prevMathOp != null &&
                             prevMathOp.MathOperator.GetPriority() < token.MathOperator.GetPriority())
                         {

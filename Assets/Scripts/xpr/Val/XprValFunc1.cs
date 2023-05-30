@@ -1,17 +1,18 @@
+#nullable enable
 using System;
 using Xpr.xpr.Math;
 
 namespace Xpr.xpr.Val
 {
 
-/**
- * function with 1 argument
- */
+    /**
+     * function with 1 argument
+     */
     internal class XprValFunc1 : XprValFunc
     {
         public XprVal? Arg;
 
-        public Func<float, float>? Func;
+        private Func<float, float>? _func;
 
         public XprValFunc1(string name) : base(name)
         {
@@ -19,14 +20,14 @@ namespace Xpr.xpr.Val
 
         public XprValFunc1(MathFunc1 mf1) : base(mf1.ToString())
         {
-            Func = mf1.GetFunc();
+            _func = mf1.GetFunc();
         }
 
         public override float Eval(XprContext ctx)
         {
-            var argVal = Arg.Eval(ctx);
-            Func ??= ctx.ResolveFunc1(Name);
-            var result = Func.Invoke(argVal);
+            var argVal = Arg!.Eval(ctx);
+            _func ??= ctx.ResolveFunc1(Name);
+            var result = _func.Invoke(argVal);
             return result;
         }
 
@@ -35,5 +36,4 @@ namespace Xpr.xpr.Val
             return $"{Name}({Arg})";
         }
     }
-
 }

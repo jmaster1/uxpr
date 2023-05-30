@@ -1,3 +1,4 @@
+#nullable enable
 using Xpr.xpr.Val;
 
 namespace Xpr.xpr
@@ -5,7 +6,7 @@ namespace Xpr.xpr
 
     public class Xpr
     {
-        public string Src;
+        public readonly string Src;
 
         public XprVal? Val;
 
@@ -27,7 +28,7 @@ namespace Xpr.xpr
                 Parse();
             }
 
-            return Val.Eval(ctx);
+            return Val!.Eval(ctx);
         }
 
         public float Eval()
@@ -35,7 +36,7 @@ namespace Xpr.xpr
             return Eval(XprContext.DefaultContext);
         }
 
-        public override string ToString()
+        public override string? ToString()
         {
             return Val?.ToString();
         }

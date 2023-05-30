@@ -13,19 +13,17 @@ namespace Xpr.xpr.Math
         Mul,
         Div,
         Mod,
-        Pow,
-        Sin,
-        Cos
+        Pow
     }
 
     public static class MathFuncEx
     {
-        public static float add(ICollection<float> list)
+        public static float Add(ICollection<float> list)
         {
             return list.Sum();
         }
 
-        public static float sub(ICollection<float> list)
+        public static float Sub(ICollection<float> list)
         {
             float ret = 0;
             var first = true;
@@ -34,29 +32,23 @@ namespace Xpr.xpr.Math
                 if (first)
                 {
                     ret = f;
+                    first = false;
                 }
                 else
                 {
                     ret -= f;
-                    first = false;
                 }
             }
 
             return ret;
         }
 
-        public static float mul(ICollection<float> list)
+        public static float Mul(ICollection<float> list)
         {
-            float ret = 1;
-            foreach (var f in list)
-            {
-                ret *= f;
-            }
-
-            return ret;
+            return list.Aggregate<float, float>(1, (current, f) => current * f);
         }
 
-        public static float div(ICollection<float> list)
+        public static float Div(ICollection<float> list)
         {
             float ret = 0;
             var first = true;
@@ -65,11 +57,11 @@ namespace Xpr.xpr.Math
                 if (first)
                 {
                     ret = f;
+                    first = false;
                 }
                 else
                 {
                     ret /= f;
-                    first = false;
                 }
             }
 
@@ -81,13 +73,13 @@ namespace Xpr.xpr.Math
             switch (val)
             {
                 case MathFunc.Add:
-                    return add;
+                    return Add;
                 case MathFunc.Sub:
-                    return sub;
+                    return Sub;
                 case MathFunc.Mul:
-                    return mul;
+                    return Mul;
                 case MathFunc.Div:
-                    return div;
+                    return Div;
                 case MathFunc.Mod:
                 case MathFunc.Pow:
                 default:

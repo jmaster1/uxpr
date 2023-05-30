@@ -4,6 +4,9 @@ using System;
 namespace Xpr.xpr.Val
 {
 
+    /**
+     * function with 2 arguments
+     */
     internal class XprValFunc2 : XprValFunc
     {
         public XprVal? Arg1;

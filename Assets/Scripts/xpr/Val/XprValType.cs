@@ -7,5 +7,4 @@ namespace Xpr.xpr.Val
         Func,
         MathOp
     }
-
 }

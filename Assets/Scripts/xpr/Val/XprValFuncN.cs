@@ -5,6 +5,9 @@ using System.Collections.Generic;
 namespace Xpr.xpr.Val
 {
 
+    /**
+     * function with arbitrary argument count
+     */
     internal class XprValFuncN : XprValFunc
     {
         private readonly List<XprVal> _args = new();

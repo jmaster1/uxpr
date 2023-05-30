@@ -6,8 +6,8 @@ namespace Xpr.xpr.Val
 {
 
     /**
- * base class for Xpr value provider
- */
+     * base class for Xpr value provider
+     */
     public abstract class XprVal : GenericEntity
     {
         public abstract XprValType GetValType();

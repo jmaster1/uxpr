@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using Xpr.xpr.Math;
 
@@ -5,8 +6,8 @@ namespace Xpr.xpr.Val
 {
 
     /**
- * function with 0 arguments
- */
+     * function with 0 arguments
+     */
     internal class XprValFunc0 : XprValFunc
     {
         public Func<float>? Func;
