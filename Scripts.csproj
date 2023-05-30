@@ -55,7 +55,7 @@
      <Compile Include="Assets/Scripts/xpr/Val/XprValFunc0.cs" />
      <Compile Include="Assets/Scripts/Components/Audio/Au.cs" />
      <Compile Include="Assets/Scripts/xpr/Util/LangHelper.cs" />
-     <Compile Include="Assets/Scripts/Unity/FloatArrayHistory.cs" />
+     <Compile Include="Assets/Scripts/xpr/Util/Math/FloatArrayHistory.cs" />
      <Compile Include="Assets/Scripts/xpr/Unity/AbstractUXprEmitter.cs" />
      <Compile Include="Assets/Scripts/xpr/Util/StringHelper.cs" />
      <Compile Include="Assets/Scripts/xpr/Unity/MonobehUXprEmitter.cs" />
