@@ -1,41 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using xpr;
 using xpr.Unity;
-using Xpr.xpr;
 
-namespace Unity
+namespace Components.Unity
 {
-
-    public interface IData2DProvider
-    {
-        int GetCount();
-
-        Vector2 Get(int index);
-    }
-
-    public class DefaultData2DProvider : IData2DProvider
-    {
-        private readonly Func<int> _count;
-        
-        private readonly Func<int, Vector2> _value;
-
-        public DefaultData2DProvider(Func<int> count, Func<int, Vector2> value)
-        {
-            _count = count;
-            _value = value;
-        }
-
-        public int GetCount()
-        {
-            return _count.Invoke();
-        }
-
-        public Vector2 Get(int index)
-        {
-            return _value.Invoke(index);
-        }
-    }
 
     public class Plotter : MonoBehaviour
     {

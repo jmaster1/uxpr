@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Components.Unity;
 using Unity;
 using UnityEngine;
 
@@ -9,15 +10,28 @@ namespace xpr.Util.Math
         private readonly List<float[]> _history = new();
     
         public int ArraySize => _history.Count > 0 ? _history[0].Length : 0;
+
+        private float[] mins, maxs;
     
         public void Add(float[] data)
         {
+            var n = data.Length;
             if (_history.Count > 0)
             {
                 var l = ArraySize;
                 Assert(l == data.Length);
             }
+            else
+            {
+                mins = new float[n];
+                maxs = new float[n];
+            }
             _history.Add(data);
+            for (var i = 0; i < n; i++)
+            {
+                mins[i] = Mathf.Min(mins[i], data[i]);
+                maxs[i] = Mathf.Min(mins[i], data[i]);
+            }
         }
 
         public IData2DProvider CreateAverageProvider(int size)
