@@ -1,6 +1,6 @@
 using System;
 
-namespace Xpr.xpr
+namespace xpr
 {
 
     public class XprParseException : Exception

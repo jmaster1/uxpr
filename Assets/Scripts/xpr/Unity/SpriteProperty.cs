@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Xpr.xpr.Unity
+namespace xpr.Unity
 {
 
     public enum SpriteProperty

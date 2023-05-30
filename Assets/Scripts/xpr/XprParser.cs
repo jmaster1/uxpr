@@ -1,6 +1,7 @@
 #nullable enable
 using System;
 using System.Diagnostics;
+using xpr;
 using xpr.Math;
 using xpr.Token;
 using xpr.Util;

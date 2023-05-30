@@ -6,19 +6,19 @@ namespace xpr.Unity
 
     public enum UnityProperty
     {
-        x,
-        y,
-        z,
-        sx,
-        sy,
-        sz,
-        rx,
-        ry,
-        rz,
-        cr,
-        cg,
-        cb,
-        ca
+        X,
+        Y,
+        Z,
+        Sx,
+        Sy,
+        Sz,
+        Rx,
+        Ry,
+        Rz,
+        CR,
+        Cg,
+        Cb,
+        Ca
     }
     
     public static class UnityPropertyEx
@@ -28,73 +28,73 @@ namespace xpr.Unity
         {
             return p switch
             {
-                UnityProperty.x => (go, val) =>
+                UnityProperty.X => (go, val) =>
                 {
                     var pos = go.transform.localPosition;
                     go.transform.localPosition = new Vector3(val, pos.y, pos.z);
                 },
-                UnityProperty.y => (go, val) =>
+                UnityProperty.Y => (go, val) =>
                 {
                     var pos = go.transform.localPosition;
                     go.transform.localPosition = new Vector3(pos.x, val, pos.z);
                 },
-                UnityProperty.z => (go, val) =>
+                UnityProperty.Z => (go, val) =>
                 {
                     var pos = go.transform.localPosition;
                     go.transform.localPosition = new Vector3(pos.x, pos.y, val);
                 },
-                UnityProperty.sx => (go, val) =>
+                UnityProperty.Sx => (go, val) =>
                 {
                     var pos = go.transform.localScale;
                     go.transform.localScale = new Vector3(val, pos.y, pos.z);
                 },
-                UnityProperty.sy => (go, val) =>
+                UnityProperty.Sy => (go, val) =>
                 {
                     var pos = go.transform.localScale;
                     go.transform.localScale = new Vector3(pos.x, val, pos.z);
                 },
-                UnityProperty.sz => (go, val) =>
+                UnityProperty.Sz => (go, val) =>
                 {
                     var pos = go.transform.localScale;
                     go.transform.localScale = new Vector3(pos.x, pos.y, val);
                 },
-                UnityProperty.rx => (go, val) =>
+                UnityProperty.Rx => (go, val) =>
                 {
                     var pos = go.transform.rotation;
                     go.transform.rotation =  Quaternion.Euler(val, pos.y, pos.z);
                 },
-                UnityProperty.ry => (go, val) =>
+                UnityProperty.Ry => (go, val) =>
                 {
                     var pos = go.transform.rotation;
                     go.transform.rotation = Quaternion.Euler(pos.x, val, pos.z);
                 },
-                UnityProperty.rz => (go, val) =>
+                UnityProperty.Rz => (go, val) =>
                 {
                     var pos = go.transform.rotation;
                     go.transform.rotation = Quaternion.Euler(pos.x, pos.y, val);
                 },
-                UnityProperty.cr => (go, val) =>
+                UnityProperty.CR => (go, val) =>
                 {
                     var sprite = go.GetComponent<SpriteRenderer>();
                     var color = sprite.color;
                     color.r = val;
                     sprite.color = color;
                 },
-                UnityProperty.cg => (go, val) =>
+                UnityProperty.Cg => (go, val) =>
                 {
                     var sprite = go.GetComponent<SpriteRenderer>();
                     var color = sprite.color;
                     color.g = val;
                     sprite.color = color;
                 },
-                UnityProperty.cb => (go, val) =>
+                UnityProperty.Cb => (go, val) =>
                 {
                     var sprite = go.GetComponent<SpriteRenderer>();
                     var color = sprite.color;
                     color.b = val;
                     sprite.color = color;
                 },
-                UnityProperty.ca => (go, val) =>
+                UnityProperty.Ca => (go, val) =>
                 {
                     var sprite = go.GetComponent<SpriteRenderer>();
                     var color = sprite.color;

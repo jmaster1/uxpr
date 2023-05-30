@@ -2,7 +2,7 @@ using System;
 using xpr.Math;
 using xpr.Util;
 
-namespace Xpr.xpr
+namespace xpr
 {
 
     public class XprContext : GenericEntity
