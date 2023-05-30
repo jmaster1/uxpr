@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Xpr.xpr.Math
+namespace xpr.Math
 {
 
     /**

@@ -1,6 +1,6 @@
 using System;
 
-namespace Xpr.xpr.Math
+namespace xpr.Math
 {
 
     public enum MathOperator

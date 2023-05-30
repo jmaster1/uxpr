@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using Xpr.xpr.Math;
+using xpr.Math;
 using Xpr.xpr.Util;
 using static Xpr.xpr.Token.XprTokenType;
 
