@@ -11,6 +11,7 @@ namespace Tests
         {
             CheckParseError("-");
             CheckParseError(")");
+            CheckParseError("()");
             CheckParseError("sin(");
         }
 
@@ -36,10 +37,20 @@ namespace Tests
             CheckEval("1*2+3*4", 14);
             CheckEval("1", 1);
             CheckEval("-1", -1);
+            CheckEval("-1+1", 0);
             CheckEval("1+2", 3);
             CheckEval("1 + 2", 3);
             CheckEval("1+2+3", 6);
+        }
         
+        [Test]
+        public void TestBrackets()
+        {
+            CheckEval("(1)", 1);
+            CheckEval("(-1)", -1);
+            CheckEval("(1+2)", 3);
+            CheckEval("(1+2)*3", 9);
+            CheckEval("(1+2)*(3+4)", 21);
         }
     
         [Test]

@@ -1,9 +1,7 @@
 #nullable enable
-using xpr;
 using xpr.Math;
-using xpr.Val;
 
-namespace Xpr.xpr.Val
+namespace xpr.Val
 {
 
     internal class XprValMathOp : XprVal

@@ -1,10 +1,11 @@
-namespace Xpr.xpr.Val
+namespace xpr.Val
 {
 
     public enum XprValType
     {
         Number,
         Func,
-        MathOp
+        MathOp,
+        Delegate
     }
 }

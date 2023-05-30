@@ -2,6 +2,6 @@
 	<s:Boolean x:Key="/Default/CodeEditing/Unity/AllowRiderUpdateNotifications/@EntryValue">False</s:Boolean>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6c5eb37f_002D5794_002D4555_002Dac42_002D6708b6b4061a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestParseError" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::EBEFF368-61E6-865A-962D-E3E494815BA8::.NETFramework,Version=v4.7.1::AbstractXprTest.TestParseError&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::EBEFF368-61E6-865A-962D-E3E494815BA8::.NETFramework,Version=v4.7.1::Tests.XprTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

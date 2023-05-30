@@ -1,10 +1,8 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
-using xpr;
-using xpr.Val;
 
-namespace Xpr.xpr.Val
+namespace xpr.Val
 {
 
     /**
@@ -13,6 +11,8 @@ namespace Xpr.xpr.Val
     internal class XprValFuncN : XprValFunc
     {
         private readonly List<XprVal> _args = new();
+        
+        public int ArgCount => _args.Count;
 
         private float[]? _values;
 
@@ -54,6 +54,10 @@ namespace Xpr.xpr.Val
                 2 => new XprValFunc2(Name) {Arg1 = _args[0], Arg2 = _args[1]},
                 _ => this
             };
+        }
+        public XprVal GetArg(int index)
+        {
+            return _args[index];
         }
     }
 }

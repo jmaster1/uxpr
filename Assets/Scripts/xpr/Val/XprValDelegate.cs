@@ -1,31 +1,28 @@
-using System.Globalization;
-
 namespace xpr.Val
 {
 
-    internal class XprValNumber : XprVal
+    internal class XprValDelegate : XprVal
     {
-        private readonly float _value;
+        private readonly XprVal _value;
 
-        public XprValNumber(float value)
+        public XprValDelegate(XprVal value)
         {
             _value = value;
         }
 
         public override XprValType GetValType()
         {
-            return XprValType.Number;
+            return XprValType.Delegate;
         }
 
         public override float Eval(XprContext ctx)
         {
-            return _value;
+            return _value.Eval(ctx);
         }
 
         public override string ToString()
         {
-            return _value.ToString(CultureInfo.InvariantCulture);
+            return $"({_value})";
         }
     }
-
 }

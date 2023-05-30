@@ -1,6 +1,4 @@
-using xpr.Val;
-
-namespace Xpr.xpr.Val
+namespace xpr.Val
 {
 
     internal abstract class XprValFunc : XprVal

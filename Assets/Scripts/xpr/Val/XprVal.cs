@@ -1,9 +1,7 @@
 using System;
 using xpr.Token;
 using xpr.Util;
-using Xpr.xpr;
 using Xpr.xpr.Token;
-using Xpr.xpr.Val;
 
 namespace xpr.Val
 {

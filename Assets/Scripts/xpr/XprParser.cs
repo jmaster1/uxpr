@@ -1,15 +1,13 @@
 #nullable enable
 using System;
 using System.Diagnostics;
-using xpr;
 using xpr.Math;
 using xpr.Token;
 using xpr.Util;
 using xpr.Val;
 using Xpr.xpr.Token;
-using Xpr.xpr.Val;
 
-namespace Xpr.xpr
+namespace xpr
 {
 
     public class XprParser : GenericEntity
@@ -59,47 +57,19 @@ namespace Xpr.xpr
                     {
                         Debug.Assert(nextToken != null, nameof(nextToken) + " != null");
                         xt.ConsumePeekToken(nextToken);
-                        XprVal? arg = null;
-                        while (opened && xt.GetHasMoreTokens())
-                        {
-                            var next = ParseNext(xt, arg, out token);
-                            if (token != null)
-                            {
-                                switch (token.Type)
-                                {
-                                    case XprTokenType.BracketClose:
-                                        if (arg != null)
-                                        {
-                                            func.AddArg(arg);
-                                        }
-
-                                        opened = false;
-                                        break;
-                                    case XprTokenType.ArgSeparator:
-                                        func.AddArg(arg);
-                                        arg = null;
-                                        break;
-                                    default:
-                                        throw new XprParseException($"Unexpected child token {token} for {func}");
-                                }
-                            }
-                            else
-                            {
-                                Assert(next != null);
-                                arg = next;
-                            }
-                        }
+                        ParseFunc(xt, func);
                     }
-
-                    if (opened)
-                    {
-                        throw new XprParseException($"Function {func} left unclosed");
-                    }
-
                     val = func.Reduce();
                     break;
                 case XprTokenType.BracketOpen:
-                    Assert(false);
+                    func = new XprValFuncN("?");
+                    ParseFunc(xt, func);
+                    if (func.ArgCount != 1)
+                    {
+                        throw new XprParseException($"Unexpected argument (must be 1) count at token {token}");
+                    }
+
+                    val = new XprValDelegate(func.GetArg(0));
                     break;
                 case XprTokenType.Operator:
                     //
@@ -149,6 +119,45 @@ namespace Xpr.xpr
             }
 
             return val;
+        }
+
+        private void ParseFunc(XprTokenizer xt, XprValFuncN func)
+        {
+            var open = true;
+            XprVal? arg = null;
+            while (open && xt.GetHasMoreTokens())
+            {
+                var next = ParseNext(xt, arg, out var token);
+                if (token != null)
+                {
+                    switch (token.Type)
+                    {
+                        case XprTokenType.BracketClose:
+                            if (arg != null)
+                            {
+                                func.AddArg(arg);
+                            }
+
+                            open = false;
+                            break;
+                        case XprTokenType.ArgSeparator:
+                            func.AddArg(arg);
+                            arg = null;
+                            break;
+                        default:
+                            throw new XprParseException($"Unexpected child token {token} for {func}");
+                    }
+                }
+                else
+                {
+                    Assert(next != null);
+                    arg = next;
+                }
+            }
+            if (open)
+            {
+                throw new XprParseException($"Function {func} left unclosed");
+            }
         }
 
         private static XprVal RequireVal(XprVal? val)
