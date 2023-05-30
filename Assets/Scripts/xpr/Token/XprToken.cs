@@ -1,6 +1,7 @@
 #nullable enable
 using xpr.Math;
-using Xpr.xpr.Util;
+using xpr.Token;
+using xpr.Util;
 
 namespace Xpr.xpr.Token
 {

@@ -1,4 +1,4 @@
-namespace Xpr.xpr.Token
+namespace xpr.Token
 {
 
     public struct SrcRange

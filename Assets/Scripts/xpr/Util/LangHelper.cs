@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Xpr.xpr.Util
+namespace xpr.Util
 {
     /// <summary>
     /// language utility class

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Xpr.xpr.Util
+namespace xpr.Util
 {
     /// <summary>
     /// Dictionary extension that is more convenient to use

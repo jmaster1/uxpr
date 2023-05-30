@@ -2,7 +2,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Xpr.xpr.Util
+namespace xpr.Util
 {
     /// <summary>
     /// JsonConverter extension with generic type

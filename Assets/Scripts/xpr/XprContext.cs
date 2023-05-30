@@ -1,6 +1,6 @@
 using System;
 using xpr.Math;
-using Xpr.xpr.Util;
+using xpr.Util;
 
 namespace Xpr.xpr
 {

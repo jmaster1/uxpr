@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using xpr.Math;
-using Xpr.xpr.Util;
-using static Xpr.xpr.Token.XprTokenType;
+using xpr.Util;
+using Xpr.xpr;
+using Xpr.xpr.Token;
+using static xpr.Token.XprTokenType;
 
-namespace Xpr.xpr.Token
+namespace xpr.Token
 {
 
     /**

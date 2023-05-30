@@ -1,6 +1,7 @@
 #nullable enable
 using System;
 using xpr.Math;
+using xpr.Val;
 
 namespace Xpr.xpr.Val
 {

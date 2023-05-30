@@ -1,4 +1,4 @@
-﻿namespace Xpr.xpr.Util
+﻿namespace xpr.Util
 {
     /// <summary>
     /// generic interface with id support

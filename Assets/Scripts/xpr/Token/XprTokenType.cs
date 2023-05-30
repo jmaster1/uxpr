@@ -1,5 +1,7 @@
 #nullable enable
-namespace Xpr.xpr.Token
+using Xpr.xpr.Token;
+
+namespace xpr.Token
 {
 
     public enum XprTokenType

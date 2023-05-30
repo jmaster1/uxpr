@@ -2,8 +2,10 @@
 using System;
 using System.Diagnostics;
 using xpr.Math;
+using xpr.Token;
+using xpr.Util;
+using xpr.Val;
 using Xpr.xpr.Token;
-using Xpr.xpr.Util;
 using Xpr.xpr.Val;
 
 namespace Xpr.xpr

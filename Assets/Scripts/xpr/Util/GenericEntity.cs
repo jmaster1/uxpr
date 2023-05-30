@@ -1,6 +1,6 @@
 using System;
 
-namespace Xpr.xpr.Util
+namespace xpr.Util
 {
 
     public class GenericEntity
