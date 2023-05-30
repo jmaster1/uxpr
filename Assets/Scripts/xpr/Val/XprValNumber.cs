@@ -27,5 +27,4 @@ namespace xpr.Val
             return _value.ToString(CultureInfo.InvariantCulture);
         }
     }
-
 }

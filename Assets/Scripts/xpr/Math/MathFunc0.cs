@@ -4,8 +4,8 @@ namespace xpr.Math
 {
 
     /**
- * math functions with no arguments
- */
+     * math functions with no arguments
+     */
     public enum MathFunc0
     {
         Pi,

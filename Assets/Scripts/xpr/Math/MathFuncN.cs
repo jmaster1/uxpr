@@ -19,20 +19,10 @@ namespace xpr.Math
         {
             return val switch
             {
-                MathFuncN.Sum => Sum,
-                MathFuncN.Avg => Avg,
+                MathFuncN.Sum => arg => arg.Sum(),
+                MathFuncN.Avg => arg => arg.Average(),
                 _ => throw new ArgumentOutOfRangeException(nameof(val), val, null)
             };
-        }
-
-        private static float Sum(float[] arg)
-        {
-            return arg.Sum();
-        }
-
-        private static float Avg(float[] arg)
-        {
-            return arg.Average();
         }
     }
 

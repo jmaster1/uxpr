@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace xpr.Math
 {
@@ -13,7 +14,9 @@ namespace xpr.Math
         Mul,
         Div,
         Mod,
-        Pow
+        Pow,
+        Min,
+        Max
     }
 
     public static class MathFunc2Ex
@@ -22,44 +25,16 @@ namespace xpr.Math
         {
             return val switch
             {
-                MathFunc2.Add => Add,
-                MathFunc2.Sub => Sub,
-                MathFunc2.Mul => Mul,
-                MathFunc2.Div => Div,
-                MathFunc2.Mod => Mod,
-                MathFunc2.Pow => Pow,
+                MathFunc2.Add => (arg1, arg2) => arg1 + arg2,
+                MathFunc2.Sub => (arg1, arg2) => arg1 - arg2,
+                MathFunc2.Mul => (arg1, arg2) => arg1 * arg2,
+                MathFunc2.Div => (arg1, arg2) => arg1 / arg2,
+                MathFunc2.Mod => (arg1, arg2) => arg1 % arg2,
+                MathFunc2.Pow => Mathf.Pow,
+                MathFunc2.Min => Mathf.Min,
+                MathFunc2.Max => Mathf.Max,
                 _ => throw new ArgumentOutOfRangeException(nameof(val), val, null)
             };
-        }
-
-        private static float Pow(float arg1, float arg2)
-        {
-            return (float) System.Math.Pow(arg1, arg2);
-        }
-
-        private static float Mod(float arg1, float arg2)
-        {
-            return arg1 % arg2;
-        }
-
-        private static float Div(float arg1, float arg2)
-        {
-            return arg1 / arg2;
-        }
-
-        private static float Mul(float arg1, float arg2)
-        {
-            return arg1 * arg2;
-        }
-
-        private static float Sub(float arg1, float arg2)
-        {
-            return arg1 - arg2;
-        }
-
-        private static float Add(float arg1, float arg2)
-        {
-            return arg1 + arg2;
         }
     }
 

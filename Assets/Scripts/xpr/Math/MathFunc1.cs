@@ -63,5 +63,4 @@ namespace xpr.Math
             return Mathf.Log(arg);
         }
     }
-
 }

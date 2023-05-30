@@ -40,6 +40,7 @@ namespace xpr.Math
                 MathOperator.Divide => l / r,
                 MathOperator.Modulus => l % r,
                 MathOperator.Power => (float)System.Math.Pow(l, r),
+                MathOperator.Undefined => float.NaN,
                 _ => throw new ArgumentOutOfRangeException(nameof(val), val, null)
             };
         }
