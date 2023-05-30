@@ -41,7 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Tests/AbstractXprTest.cs" />
+     <Compile Include="Assets/Tests/XprTest.cs" />
      <None Include="Assets/Tests/Tests.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -705,6 +705,10 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Scripts.csproj">
+      <Project>{6d24e7f9-18f2-0d39-5eb8-9f901294660e}</Project>
+      <Name>Scripts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
