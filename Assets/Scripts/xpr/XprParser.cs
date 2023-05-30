@@ -118,15 +118,15 @@ namespace Xpr.xpr
                         if (prevMathOp != null &&
                             prevMathOp.MathOperator.GetPriority() < token.MathOperator.GetPriority())
                         {
-                            mathOp._left = prevMathOp._right;
-                            prevMathOp._right = mathOp;
+                            mathOp.Left = prevMathOp.Right;
+                            prevMathOp.Right = mathOp;
                         }
                         else
                         {
                             prevMathOp = null;
                         }
 
-                        mathOp._right = ParseNext(xt, mathOp, out token);
+                        mathOp.Right = ParseNext(xt, mathOp, out token);
                         Assert(token == null);
                         val = prevMathOp ?? mathOp;
                     }

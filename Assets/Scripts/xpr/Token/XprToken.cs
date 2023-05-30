@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+#nullable enable
 using Xpr.xpr.Math;
 using Xpr.xpr.Util;
 
@@ -6,8 +6,8 @@ namespace Xpr.xpr.Token
 {
 
     /**
- * represents token parsed from character stream
- */
+     * represents token parsed from character stream
+     */
     public class XprToken : GenericEntity
     {
         public readonly XprTokenType Type;
@@ -23,11 +23,11 @@ namespace Xpr.xpr.Token
             Range = range;
         }
 
-        [JsonIgnore] public float NumberValue => (float) (Value ?? float.NaN);
+        public float NumberValue => (float) (Value ?? float.NaN);
 
-        [JsonIgnore] public string? StringValue => (string) (Value ?? null)!;
+        public string? StringValue => (string) (Value ?? null)!;
 
-        [JsonIgnore] public MathOperator MathOperator => (MathOperator) (Value ?? MathOperator.Undefined);
+        public MathOperator MathOperator => (MathOperator) (Value ?? MathOperator.Undefined);
 
         public bool Is(XprTokenType type)
         {
