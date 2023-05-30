@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using Newtonsoft.Json;
 
 namespace Xpr.xpr.Util
@@ -8,21 +9,21 @@ namespace Xpr.xpr.Util
     /// </summary>
     public abstract class JsonConverterGeneric<T> : JsonConverter
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var t = (T) value;
+            var t = (T) value!;
             WriteJson(writer, t, serializer);
         }
 
         protected abstract void WriteJson(JsonWriter writer, T value, JsonSerializer serializer);
 
-        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue,
+        public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue,
             JsonSerializer serializer)
         {
-            return ReadJson(reader, (T) existingValue, serializer);
+            return ReadJson(reader, (T) existingValue!, serializer);
         }
 
-        protected abstract T ReadJson(JsonReader reader, T value, JsonSerializer serializer);
+        protected abstract T? ReadJson(JsonReader reader, T? value, JsonSerializer serializer);
 
         public override bool CanConvert(Type objectType)
         {
