@@ -16,9 +16,9 @@ namespace Xpr.xpr.Math
 
     public static class MathOperatorEx
     {
-        public static readonly char[] Chars = {'?', '+', '-', '*', '/', '%', '^'};
+        private static readonly char[] Chars = {'?', '+', '-', '*', '/', '%', '^'};
 
-        public static readonly int[] Priorities = {0, 0, 1, 1, 1, 2};
+        private static readonly int[] Priorities = {0, 0, 1, 1, 1, 2};
 
         public static char GetChar(this MathOperator val)
         {
@@ -29,30 +29,22 @@ namespace Xpr.xpr.Math
         {
             return Priorities[(int) val];
         }
-        
 
         public static float Apply(this MathOperator val, float l, float r)
         {
-            switch (val)
+            return val switch
             {
-                case MathOperator.Plus:
-                    return l + r;
-                case MathOperator.Minus:
-                    return l - r;
-                case MathOperator.Multiply:
-                    return l * r;
-                case MathOperator.Divide:
-                    return l / r;
-                case MathOperator.Modulus:
-                    return l % r;
-                case MathOperator.Power:
-                    return (float) System.Math.Pow(l, r);
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(val), val, null);
-            }
+                MathOperator.Plus => l + r,
+                MathOperator.Minus => l - r,
+                MathOperator.Multiply => l * r,
+                MathOperator.Divide => l / r,
+                MathOperator.Modulus => l % r,
+                MathOperator.Power => (float)System.Math.Pow(l, r),
+                _ => throw new ArgumentOutOfRangeException(nameof(val), val, null)
+            };
         }
 
-        public static bool resolve(char next, out MathOperator op)
+        public static bool Resolve(char next, out MathOperator op)
         {
             var index = Array.IndexOf(Chars, next);
             if (index != -1)
@@ -67,5 +59,4 @@ namespace Xpr.xpr.Math
             return index != -1;
         }
     }
-
 }
