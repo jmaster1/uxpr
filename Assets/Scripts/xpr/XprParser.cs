@@ -11,7 +11,7 @@ namespace Xpr.xpr
 
     public class XprParser : GenericEntity
     {
-        public static readonly XprParser Instance = new XprParser();
+        private static readonly XprParser Instance = new();
 
         public static XprVal? CreateVal(string src)
         {
@@ -114,7 +114,7 @@ namespace Xpr.xpr
                         var mathOp = new XprValMathOp(token.MathOperator, prevVal);
                         //
                         // check if prev is math op with lower priority
-                        var prevMathOp = prevVal.Is(XprValType.MathOp) ? (XprValMathOp) prevVal : null;
+                        var prevMathOp = prevVal != null && prevVal.Is(XprValType.MathOp) ? (XprValMathOp) prevVal : null;
                         if (prevMathOp != null &&
                             prevMathOp.MathOperator.GetPriority() < token.MathOperator.GetPriority())
                         {
